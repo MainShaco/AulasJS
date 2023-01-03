@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Digite a distancia percorrida <input type="text" id="distanciaPercorrida"> <br>
+   Selecione a unidade de medida <select id="unidade"> <br>
+    <option value="KM">Km</option>
+    <option value="M">Metro</option>
+   </select> <br>
+   Digite o tempo passado <input type="text" id="tempoPassado"> <br>
+   Selecione a unidade de tempo <select id="unidadeTempo"> <br>
+    <option value="H">Hora</option>
+    <option value="Sec">Segundo</option>
+ </select> <br>
+    Medida da velocidade <select id="medidaVelocidade">
+        <option value="KMH">Km/h</option>
+        <option value="MS">M/s</option>
+    </select>
+    <button onclick="Calcular()">Calcular</button>
+ <p id="resultado"></p>
+    <script>
+        function Calcular(){ 
+        let distancia = Number(distanciaPercorrida.value);
+        let tempo = Number(tempoPassado.value);
+        let medida = (unidade.value);
+        let medidaTempo = (unidadeTempo.value);
+        let medidaVeloci = (medidaVelocidade.value);
+       let VM = 0;
+
+        if (medidaVeloci === 'KMH' && medida === 'M' ){
+            distancia *= 1000;
+        }
+        if (medidaVeloci === 'KMH' && medidaTempo === 'Sec'){
+            tempo *= 3600;
+        }
+        if(medidaVeloci === 'MS' && medida === 'KM'){
+            distancia /= 1000;
+        }
+        if(medidaVeloci === 'MS' && medidaTempo === 'H'){
+             tempo /= 3600;
+        }
+        
+        VM = (distancia / tempo).toFixed(2);
+
+        if(medidaVeloci === 'KMH'){
+            resultado.innerHTML = `Velocidade media e ${VM} km/h`;
+        } else{
+            resultado.innerHTML = `Velocidade media e ${VM} m/s`;
+        }
+    }
+       </script>
+</body>
+</html>

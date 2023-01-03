@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome do aluno <input type="text" id="nomeAluno"> <br>
+    Digite o total de aulas <input type="text" id="totalAula"> <br>
+    Digite as aulas assistidas <input type="text" id="aulaAssistida"> <br>
+    Digite a primeira nota do aluno <input type="text" id="primeiraNota"> <br>
+    Digite a segunda nota do aluno <input type="text" id="segundaNota"> <br>
+    Digite a terceira nota do aluno <input type="text" id="terceiraNota"> <br>
+    <button onclick="Validar()"> Calcular</button>
+   <p id="resultado"></p>
+    <script>
+        function Validar(){  
+         let nome = (nomeAluno.value);
+         let totalAulas = Number(totalAula.value);
+         let aulasAssistidas = Number(aulaAssistida.value);
+         let nota1 = Number(primeiraNota.value);
+         let nota2 = Number(segundaNota.value);
+         let nota3 = Number(terceiraNota.value);
+         let media = nota1 + nota2 + nota3 / 3;
+         let frequencia = (aulasAssistidas / totalAulas) * 100;
+
+         if(frequencia < 75 && media >= 6){
+            resultado.innerHTML = (`O aluno ${nome} esta reprovado por frequência ${frequencia.toFixed(2)}%`);
+         } if(frequencia >= 75 && media < 6 ){
+            resultado.innerHTML = (`O aluno ${nome} esta reprovado por media ${media.toFixed(2)}`);
+         }
+          if(frequencia >= 75 && media >= 6){
+            resultado.innerHTML = (`Parabens aluno ${nome} esta aprovado com media ${media.toFixed(2)} e frequencia ${frequencia.toFixed(2)}%`);
+          }
+        }
+    </script>
+</body>
+</html>

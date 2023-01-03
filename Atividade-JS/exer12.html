@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Lado da figura <input type="text" id="lado"> <br>
+   Base da figura <input type="text" id="base"> <br>
+   Altura da figura <input type="text" id="altura"> <br>
+   Raio da figura <input type="text" id="raio"> <br>
+   Escolha uma figura Geometrica <select id="figuras">
+        <option value="1">Quadrado</option>
+        <option value="2">Circulo</option>
+        <option value="3">Retangulo</option>
+    </select>
+    <button onclick="Calcular()">Gerar</button>
+    <p id="resultado">
+    <script>
+       function Calcular() {
+        let ladinho = Number(lado.value);
+        let baze = Number(base.value);
+        let alturra = Number(altura.value);
+        let raiu = Number(raio.value);
+        let figurinha = Number(figuras.value);
+        
+        if(figurinha == 1){
+          resultado.innerHTML =  ladinho * 4;
+        }
+        if(figurinha == 2){
+            resultado.innerHTML =  2* Math.PI.toFixed(2)*raiu;
+        }
+        if(figurinha == 3){
+            resultado.innerHTML = 2 * baze + 2 * alturra;
+        }
+       }
+    </script>
+</body>
+</html>

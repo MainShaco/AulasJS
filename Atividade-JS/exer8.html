@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Total de aulas  <input type="text" id="total">
+   Aulas assistidas <input type="text" id="assistido">
+    <button onclick="Calcular()"> Calcular</button>
+    <p id="resul"></p>
+    <script>
+        function Calcular(){ 
+        let tot = Number(total.value);
+        let assis = Number(assistido.value);
+       let resultado = assis / tot;
+       resul.innerHTML = `O aluno assistiu ${resultado.toFixed(3) *100}% das aulas.`
+        }
+    </script>
+</body>
+</html>

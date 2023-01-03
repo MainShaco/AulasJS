@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Apostila JavaScript Progressivo</title>
+   <script type="text/javascript" src="script.js"></script>
+ </head>
+ <body>
+   Número para teste: <input id="num" type="text">
+   <button onclick="Primo()">Testar</button><br />
+   <p id="resposta"></p>
+
+    <script>
+ function Primo(){
+  let numero = parseInt(num.value);
+  let divisores=0;
+
+  for(let i=1 ; i<=numero ; i++)
+   if(numero % i == 0){ 
+   	divisores++;}
+  
+  if(divisores==2){ 
+  	resposta.innerHTML='É primo';}
+  else{  
+  	resposta.innerHTML='Não é primo';}
+}
+    </script>
+ </body>
+</html>
+

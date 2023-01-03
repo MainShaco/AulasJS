@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="numero1">
+    <input type="text" id="numero2">
+    <select id="operacao">
+        <option value="1"> Adicao</option>
+        <option value="2"> Substracao</option>
+        <option value="3"> Divisao</option>
+        <option value="4"> Multiplicacao</option>
+    </select>
+    <button onclick="Calculo()"> calcular</button>
+    <p id="resultado"></p>
+<script> 
+    function Calculo (){
+        let num1 = Number(numero1.value);
+        let num2 = Number(numero2.value);
+        
+        let op = Number(operacao.value);
+       if(op == 1){
+       resultado.innerHTML = `A soma de ${num1}+${num2} e igual a ${num1 + num2}`;
+       } if(op == 2){
+        resultado.innerHTML = `A subtração de ${num1}-${num2} e igual a ${num1 - num2}`;
+       } if(op == 3){
+        resultado.innerHTML = `A divisão de ${num1}/${num2} e igual a ${num1 / num2}`;
+       } if(op == 4){ 
+        resultado.innerHTML = `A multiplicação de ${num1}*${num2} e igual a ${num1 * num2}`;
+       }
+    
+    }
+</script>
+</body>
+</html>
